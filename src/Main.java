@@ -8,35 +8,32 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         List<String> listA = new ArrayList<>(5);
         List<String> listB = new ArrayList<>(5);
-        List<String> listC = new ArrayList<>(10);
+        List<String> listC = new ArrayList<>();
 
         System.out.println("Please, input your 5 elements to the List A: ");
-        Iterator<String> iteratorA = listA.iterator();
-        while (iteratorA.hasNext()) {
-            listC.add(listA.iterator().next());
-            System.out.println(listA.indexOf(iteratorA));
-        }
-
         int i = 0;
         while (i < 5) {
             listA.add(scanner.nextLine());
             i++;
         }
+        Iterator<String> iteratorA = listA.iterator();
+        while (iteratorA.hasNext()) {
+            listC.add(iteratorA.next());
+        }
+
 
         System.out.println("List A");
         System.out.println(listA);
 
         System.out.println("Please, input your 5 elements to the List B: ");
-        Iterator<String> iteratorB = listB.iterator();
-        while (iteratorB.hasNext()) {
-            listC.add(listB.iterator().next());
-            System.out.println(listB);
-        }
-
         int j = 0;
         while (j < 5) {
             listB.add(scanner.nextLine());
             j++;
+        }
+        Iterator<String> iteratorB = listB.iterator();
+        while (iteratorB.hasNext()) {
+            listC.add(iteratorB.next());
         }
 
         System.out.println("List B");
@@ -58,8 +55,11 @@ public class Main {
             if (iteratorB.hasNext()){
                 listC.add(iteratorB.next());
             }
-            System.out.println(listC.iterator());
+            System.out.println(listC);
         }
+        System.out.println(listC);
+
+        Collections.sort(listC);
         System.out.println(listC);
 
         /*int j = 0;
